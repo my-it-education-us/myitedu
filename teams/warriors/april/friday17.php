@@ -1,56 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+</head>
+<body>
 <?php
-error_reporting(0);
-//String = alfa numeric + characters
-//Int = whole numbers -1000000 to 10000000
-//Boolean = TRUE | FALSE or 1 | 0
-//Floats or Double | Decimal numbers, -1.2500  tp 1.3000 pI = 3.14
-//NULL = data type | NUll is declared but it has an empty value
-//Array = series of data or information, a group of variables
-//Iterables = array | object
-//Constants = the opposite of variable it never changes its value.
-//define ('DOB','08/26/1976');
-//echo DOB;
+    $result = 0;
+    $num1 = $_GET['num1']??5;
+    $operator = $_GET['operator']??'+';
+    $num2 = $_GET['num2']??5;
 
-$numbers = range(1,100);
-
-foreach ($numbers as $i=>$number){
-
-    if ($i%2==0){
-        echo "<span class='two'>$i</span>";
+    if (empty($num1)){
+        $num1 = 5;
+    }
+    if (empty($operator)){
+        $operator = '+';
+    }
+    if (empty($num2)){
+        $num2 = 5;
     }
 
-    if ($i%7==0){
-        echo "<span class='seven'>$i</span>";
-    }
-
-    if ($i%7==0 && $i%13==0){
-        echo "<span> both 7 and 13 </span>";
-
-        if (!isset($name)){
-            $file = "File:".__FILE__. " | Line:". __LINE__;
-            error_log("An undefined variable \$name is used in " . $file);
-        }
-        echo $name;
-
-
-
-        echo "<br>";
-        echo "File:".__FILE__. " | Line:". __LINE__;
-        echo "<br>";
-    }
-    echo "<hr>";
-}
-
+    $result = eval('return '.$num1.$operator.$num2.';');
 ?>
+<h3>My Basic Calculator</h3>
+<form method="get">
+    <p>
+        Result: <?php echo $result;?>
+    </p>
+    <p>
+        <input required="required" name="num1" type="number" placeholder="Number 1">
+    </p>
+    <p>
+        <select name="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+    </p>
+    <p>
+        <input required="required"  name="num2" type="number" placeholder="Number 2">
+    </p>
+    <p>
+        <button type="submit">Calculate</button>
+    </p>
+</form>
 
-<style>
-    .two{
-        color: #ffffff;
-        background-color: #786cde;
-    }
-    .seven{
-        color: #ff1518;
-        background-color: #ffffff;
-    }
-
-</style>
+</body>
+</html>

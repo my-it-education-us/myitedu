@@ -17,16 +17,23 @@ $email = $_POST['email']??null;
 $password = $_POST['password']??null;
 $formsubmitted = $_POST['formsubmitted']??false;
 
+echo "<hr><pre>";
+var_dump($_ENV);
+echo "</pre><hr>";
+
+
+
+
 if ($formsubmitted){
 
-    if ($email==='jon@jon.com' && $password === 'password'){
+/*    if ($email==='jon@jon.com' && $password === 'password'){
         session_start();
         $_SESSION['loggedin'] = true;
         header('Location: profile.php?msg=success');
         exit;
     }
     header('Location: login.php?msg=Your credentials are incorrect');
-    exit;
+    exit;*/
 
 }
 

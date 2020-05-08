@@ -2,15 +2,16 @@
 namespace Myitedu;
 // Import PHPMailer classes into the global namespace
 // These must be at the top of your script, not inside a function
+require_once "/Applications/XAMPP/xamppfiles/htdocs/newyork/vendor/phpmailer/phpmailer/src/PHPMailer.php";
+require_once "/Applications/XAMPP/xamppfiles/htdocs/newyork/vendor/phpmailer/phpmailer/src/SMTP.php";
 use Database\database;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-
 // Load Composer's autoloader
-require 'vendor/autoload.php';
-require_once 'inc/database.php';
+require_once "../../../vendor/autoload.php";
+require_once 'database.php';
 
 // Instantiation and passing `true` enables exceptions
 //$mail = new PHPMailer(true);

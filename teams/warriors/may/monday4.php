@@ -48,7 +48,6 @@ class Birthday{
 }
 
 $obj = new Birthday();
-$obj = new Birthday();
 $users = $obj->fetchUsersByBirthday();
 
 echo "<pre>";

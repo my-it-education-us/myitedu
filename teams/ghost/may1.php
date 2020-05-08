@@ -29,8 +29,14 @@ echo "<pre>";
 $students_a = ['Jon','Jessica','Malika','Jason','Zarina','Bekhruz','Jackoff','Alisher','Valeria'];
 $students_b = ['Jon','Jessica','Malika','Jason','Karina','Bekhruz'];
 $results = array_diff($students_a, $students_b);
-print_r($results);
 
+echo "<hr>";
+
+
+$students_a = ['Jon','Jessica','Malika','Jason','Zarina','Bekhruz','Jack','Alisher','Valeria'];
+$students_b = ['Muxabbat','Nargiza','Bobir','Jasur','Otabek','Murod','Sayora','Bekzod','Nigina'];
+$students_ab = array_merge($students_a, $students_b);
+print_r($students_ab);
 
 
 

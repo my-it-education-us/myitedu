@@ -30,38 +30,84 @@ include "backend.php";
         <div class="jumbotron">
             <h1 class="display-4"><?=ucfirst($dictionary->word)?></h1>
 
-            <?foreach ($dictionary->results as $row=>$result):?>
-            <div>
-                <p class="lead">
-                    <?=$dictionary->results[$row]->definition?>
-                    <br>
-                <h6><?=$dictionary->results[$row]->partOfSpeech?></h6>
-                </p>
-                <hr class="my-4">
+            <div id="results">
+                <?foreach ($dictionary->results as $row=>$result):?>
+                    Definition: <?=$result->definition?> <br>
+                    PartOfSpeech: <?=$result->partOfSpeech?> <br>
 
-                <?if (isset($dictionary->results[$row]->synonyms)):?>
-                <p>
-                <h6>Synonyms</h6>
-                <ul>
-                    <?foreach ($dictionary->results[$row]->synonyms as $synonym):?>
-                        <li><?=$synonym?></li>
-                    <?endforeach; ?>
-                </ul>
-                </p>
-                <?endif;?>
+                    <?if(isset($result->synonyms)):?>
+                    Synonyms: <?print_r($result->synonyms,1)?> <br>
+                    <?endif;?>
+                    <?if(isset($result->similarTo)):?>
+                        Similiar To:
+                        <ul>
+                        <?foreach ($result->similarTo as $similarTo):?>
+                        <li><?=$similarTo;?></li>
+                        <?endforeach;?>
+                        </ul>
+                    <?endif;?>
 
+                    <?if(isset($result->antonyms)):?>
+                        Antonyms:
+                        <ul>
+                            <?foreach ($result->antonyms as $antonym):?>
+                                <li><?=$antonym;?></li>
+                            <?endforeach;?>
+                        </ul>
+                    <?endif;?>
+
+                    <?if(isset($result->derivation)):?>
+                        Derivation:
+                        <ul>
+                            <?foreach ($result->derivation as $derivation):?>
+                                <li><?=$derivation;?></li>
+                            <?endforeach;?>
+                        </ul>
+                    <?endif;?>
+
+                    <?if(isset($result->examples)):?>
+                        Examples:
+                        <ul>
+                            <?foreach ($result->examples as $example):?>
+                                <li><?=$example;?></li>
+                            <?endforeach;?>
+                        </ul>
+                    <?endif;?>
+
+                    <?if(isset($result->also)):?>
+                        Also:
+                        <ul>
+                            <?foreach ($result->also as $also):?>
+                                <li><?=$also;?></li>
+                            <?endforeach;?>
+                        </ul>
+                    <?endif;?>
+
+                <hr>
+                <?endforeach;?>
             </div>
 
+
+
+
+
+            <div id="syllables">
+                <ol>
+                    <?foreach ($dictionary->syllables->list as $row=>$syllable):?>
+                    <li><?=$syllable?></li>
+                    <?endforeach;?>
+                </ol>
+                <div class="clearfix"></div>
+            </div>
+            <?foreach ($dictionary->pronunciation as $row2=>$item):?>
+                <div id="pronunciation">
+                    <?=print_r($item,1)?>
+                </div>
             <?endforeach;?>
 
-            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
 
 
-            <pre>
-                <?php
-                print_r($dictionary);
-                ?>
-            </pre>
+
 
         </div>
 </div>
@@ -77,10 +123,11 @@ include "backend.php";
     }
 
     #dictionary{
-        background-color: whitesmoke;
+        background-color: #872315;
         border-radius: 15px;
         margin: 10px auto;
         width: 95%;
+        height: auto;
     }
 
     body{

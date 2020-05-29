@@ -32,14 +32,14 @@ include "backend.php";
 
             <div id="results">
                 <?foreach ($dictionary->results as $row=>$result):?>
-                    Definition: <?=$result->definition?> <br>
-                    PartOfSpeech: <?=$result->partOfSpeech?> <br>
+                    <span class="mylabel">Definition:</span> <?=$result->definition?> <br>
+                    <span class="mylabel">PartOfSpeech:</span> <?=$result->partOfSpeech?> <br>
 
                     <?if(isset($result->synonyms)):?>
-                    Synonyms: <?print_r($result->synonyms,1)?> <br>
+                        <span class="mylabel">Synonyms:</span> <?print_r($result->synonyms,1)?> <br>
                     <?endif;?>
                     <?if(isset($result->similarTo)):?>
-                        Similiar To:
+                        <span class="mylabel">Similiar To:</span>:
                         <ul>
                         <?foreach ($result->similarTo as $similarTo):?>
                         <li><?=$similarTo;?></li>
@@ -48,7 +48,7 @@ include "backend.php";
                     <?endif;?>
 
                     <?if(isset($result->antonyms)):?>
-                        Antonyms:
+                        <span class="mylabel">Antonyms:</span>
                         <ul>
                             <?foreach ($result->antonyms as $antonym):?>
                                 <li><?=$antonym;?></li>
@@ -57,7 +57,7 @@ include "backend.php";
                     <?endif;?>
 
                     <?if(isset($result->derivation)):?>
-                        Derivation:
+                        <span class="mylabel">Derivation:</span>
                         <ul>
                             <?foreach ($result->derivation as $derivation):?>
                                 <li><?=$derivation;?></li>
@@ -66,7 +66,7 @@ include "backend.php";
                     <?endif;?>
 
                     <?if(isset($result->examples)):?>
-                        Examples:
+                        <span class="mylabel">Examples:</span>
                         <ul>
                             <?foreach ($result->examples as $example):?>
                                 <li><?=$example;?></li>
@@ -75,10 +75,28 @@ include "backend.php";
                     <?endif;?>
 
                     <?if(isset($result->also)):?>
-                        Also:
+                        <span class="mylabel">Also:</span>
                         <ul>
                             <?foreach ($result->also as $also):?>
                                 <li><?=$also;?></li>
+                            <?endforeach;?>
+                        </ul>
+                    <?endif;?>
+
+                    <?if(isset($result->typeOf)):?>
+                        <span class="mylabel">Type Of:</span>
+                        <ul>
+                            <?foreach ($result->typeOf as $typeOf):?>
+                                <li><?=$typeOf;?></li>
+                            <?endforeach;?>
+                        </ul>
+                    <?endif;?>
+
+                    <?if(isset($result->hasTypes)):?>
+                        <span class="mylabel">Has Types:</span>
+                        <ul>
+                            <?foreach ($result->hasTypes as $hasTypes):?>
+                                <li><?=$hasTypes;?></li>
                             <?endforeach;?>
                         </ul>
                     <?endif;?>
@@ -112,6 +130,20 @@ include "backend.php";
         </div>
 </div>
 <style>
+
+    .mylabel{
+        color: rgba(0, 0, 0, 0.98);
+        text-decoration: underline;
+    }
+
+    #results{
+        background-color: #ffdee7;
+        border:1px solid black;
+        width: 99%;
+        margin: 10px auto;
+        padding:5px;
+        color: #333333;
+    }
 
 
     .divider{

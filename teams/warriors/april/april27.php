@@ -1,6 +1,5 @@
 <?php
-/*
- * $GLOBALS
+ /*$GLOBALS
 $_SERVER
 $_GET <------ also called a querystring
 $_POST <---- is used in HTML forms: login, sign up, checkout and any other secure functions.
@@ -9,9 +8,9 @@ $_COOKIE
 $_SESSION
 $_REQUEST
 $_ENV
- */
+*/
 
-$bgcolor = 'white';
+ $bgcolor = 'white';
 if (isset($_COOKIE['color'])) {
     $bgcolor = $_COOKIE['color'];
 }

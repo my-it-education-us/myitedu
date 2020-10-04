@@ -22,20 +22,20 @@ var_dump($_ENV);
 echo "</pre><hr>";
 
 
-
-
 if ($formsubmitted){
+    /* if ($email==='jon@jon.com' && $password === 'password'){
+          session_start();
+          $_SESSION['loggedin'] = true;
+          header('Location: profile.php?msg=success');
+          exit;
+      }
+      header('Location: login.php?msg=Your credentials are incorrect');
+      exit;*/
 
-/*    if ($email==='jon@jon.com' && $password === 'password'){
-        session_start();
-        $_SESSION['loggedin'] = true;
-        header('Location: profile.php?msg=success');
-        exit;
-    }
-    header('Location: login.php?msg=Your credentials are incorrect');
-    exit;*/
 
-}
+};
+
+
 
 
 ?>

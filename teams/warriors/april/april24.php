@@ -19,4 +19,4 @@ $newyork = new NewYork();
 
 
 $school = new School();
-$school->singSongs($uzb);
+$school->singSongs($newyork);

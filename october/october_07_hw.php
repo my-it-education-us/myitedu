@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-<form action="hw-oct_07.php" method="post">
+<form action="october_07_hw.php" method="post">
     <?php
     $matched = 0;
 

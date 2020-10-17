@@ -122,7 +122,7 @@
 
     }
     .mytable {
-        width: 300px;
+        width: 360px;
         height: auto;
         margin: 100px auto;
         text-align: center;

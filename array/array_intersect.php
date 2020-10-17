@@ -1,6 +1,5 @@
 <?php
 
-
 function Intersect($array1, $array2, $array3)
 {
     $result = array_intersect($array1, $array2, $array3);

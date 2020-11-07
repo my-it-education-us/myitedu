@@ -26,7 +26,7 @@ function getCars($file_name)
     } catch (Exception $e) {
         echo "<b>An error :</b> " . $e->getMessage();
         echo "<hr>";
-        echo "<u>File : </u> <b>" .$e->getFile(); echo ". </b>";
+        echo "<u>File : </u> <b>" . $e->getFile(); echo ". </b>";
         echo "<b> on line : </b ><u>" . $e->getLine(); echo "</u>";
 
 

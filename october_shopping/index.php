@@ -84,7 +84,7 @@ function display_select_options($maxlimit=0)
 
     </div>
 
-    <div data-toggle="modal" data-target="#staticBackdrop" class="shopping_cart">22</div>
+    <div data-toggle="modal" data-target="#staticBackdrop" class="shopping_cart">1</div>
 
     <h4>Our Products</h4>
 
@@ -169,6 +169,15 @@ function display_select_options($maxlimit=0)
         display: none;
 
     }
+    .large_image_window:hover{
+        background-color: white;
+        width: 380px;
+        height: 380px;
+        position: absolute;
+        left: 15%;
+        top: 30%;
+        display: none;
+    }
 
     .discount{
         color: darkred;
@@ -190,7 +199,7 @@ function display_select_options($maxlimit=0)
         background-image: url("https://cdn2.iconfinder.com/data/icons/e-commerce-4/256/Add_to_Shopping_Basket-512.png");
         background-size: 90% 90%;
         background-position: center;
-        background-color: #1abe1a;
+        background-color: #4cd137;
         width: 35px;
         height: 35px;
         position: relative;

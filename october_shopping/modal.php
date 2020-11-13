@@ -1,5 +1,4 @@
 <?php
-
 $db = new \Database\database("myitedu");
 $products = $db->sql("SELECT *, sc.qty AS sqty FROM shopping_cart AS sc
 JOIN products AS p
@@ -48,6 +47,8 @@ ON sc.product_id = p.id WHERE sc.user_id = 99;");
                         $total = $product['price'] * $product['sqty'] - ($product['price'] * $product['discount']/100);
                         $tax += $total * 0.08;
                         $grandtotal+=$total+($total * 0.08);
+
+                        $total = round($total, 2);
                         ?>
                         <tr>
                             <td>
@@ -56,7 +57,7 @@ ON sc.product_id = p.id WHERE sc.user_id = 99;");
                             <td><?php echo $product['name']; ?></td>
 
                             <td>
-                                $<?php echo $total;?>
+                                $<?php echo $product['price'];?>
                             </td>
                             <td><?php echo $product['sqty'];?></td>
                             <td>
@@ -93,7 +94,7 @@ ON sc.product_id = p.id WHERE sc.user_id = 99;");
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">check out</button>
             </div>
-            <a class="btn btn-success" href="october_27_2.php?action=empty">Empty Shopping Cart</a>
+            <a class="btn btn-success" href="index.php?action=empty">Empty Shopping Cart</a>
 
         </div>
 </div>

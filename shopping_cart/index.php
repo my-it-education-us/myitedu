@@ -55,13 +55,14 @@ if ($qty>0) {
         $sql = "UPDATE shopping_cart SET qty = $qty, user_id = 99 WHERE product_id = $id;";
         $product2 = $db->sql($sql);
     }else{
-        $db = new \Database\database("myitedu");
-        $sql = "INSERT INTO shopping_cart (product_id, qty, user_id) VALUES($id, $qty, 99);";
-        $product3 = $db->sql($sql);
+     //   $db = new \Database\database("myitedu");
+       //   $sql = "INSERT INTO shopping_cart (product_id, qty, user_id) VALUES($id, $qty, 99);";
+     //   $product3 = $db->sql($sql);
     }
 
 
 }
+
 
 
 
@@ -90,7 +91,6 @@ function display_select_options($maxlimit=0)
 
     <hr>
 
-
     <table class="table table-bordered">
         <tr>
             <th>Image</th>
@@ -111,11 +111,10 @@ function display_select_options($maxlimit=0)
                 <td><?php echo $product['description']; ?></td>
                 <td>
                     <?php
-                    $price = $newprice = $product['price'];
+                    $price= $newprice = $product['price'];
                     $discount = $product['discount'];
-
                     if ($discount>0) {
-                        $newprice = $price - ($price * $discount / 100);
+                        $newprice =  ($price * $discount / 100);
                         echo "<span class='discount'> $discount</span>";
                         echo  "<img class=\"dis_icon\" src = \"https://cdn.iconscout.com/icon/premium/png-256-thumb/discount-2595609-2166035.png\">";
                         echo "<span class='newpr'> \$$newprice</span>";
@@ -124,21 +123,19 @@ function display_select_options($maxlimit=0)
                     }else {
                         echo "$".$price;
                     }
+
                     ?>
                 </td>
                 <?php
                 if ($product['qty']){
                     ?>
                     <td>
-                        <form>
-                            <select name="qty">
+                            <select id="qty_<?php echo $product['id']?>" name="qty">
                                 <?php
                                 display_select_options($product['qty']);
                                 ?>
                             </select>
-                            <input name="id" type="hidden" value="<?php echo $product['id']?>">
-                            <input value="" class="product" type="submit" name="sbt_btn">
-                        </form>
+                            <input data-product_id="<?php echo $product['id']?>" value="" class="product" type="submit" name="sbt_btn">
                     </td>
                     <?php
                 }else{
@@ -304,15 +301,52 @@ function display_select_options($maxlimit=0)
             $(".large_image_window").empty().hide();
 
         });
-    });
 
+
+        $(".shopping_cart").click(function (){
+            let data = {};
+            $.post("http://myitedu.uz/shopping_cart/shopping_cart.php", data, function (response){
+                $("#modal-body").html(response);
+            });
+
+        });
+        $(document).on("click", ".remove_item_icon", function (){
+            let product_id = $(this).data("product_id");
+            let data = {'product_id' :product_id};
+            let result = null;
+            $.post("http://myitedu.uz/shopping_cart/delete_items.php", data, function (response){
+
+
+               $.post("http://myitedu.uz/shopping_cart/shopping_cart.php", data, function (response){
+                   $("#modal-body").html(response);
+               });
+
+         });
+
+       });
+        $(".product").click(function (){
+            let product_id = $(this).data('product_id');
+            let qty = $("#qty_"+product_id).val();
+            let data = {
+                'product_id': product_id,
+                'qty': qty,
+                'user_id': 99
+            };
+            $.post("http://myitedu.uz/shopping_cart/add_shopping_cart.php", data, function (response){
+                if (response==1){
+                    alert("The item has been added to your shopping cart")
+                }
+            });
+        })
+
+    });
 
 </script>
 
 <?php
 include "modal.php";
 ?>
-
+/
 </body>
 </html>
 

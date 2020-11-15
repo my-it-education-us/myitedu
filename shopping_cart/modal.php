@@ -21,67 +21,68 @@
                 </button>
             </div>
             <div id="modal-body" class="modal-body">
-             edfdsfdfdsfdvgdvsdf
+                edfdsfdfdsfdvgdvsdf
             </div>
+            <?php include_once "checkout.php";?>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">check out</button>
+                <button type="button" class="btn btn-primary" id="checkout_button">check out</button>
             </div>
             <a class="btn btn-success" href="index.php?action=empty">Empty Shopping Cart</a>
 
         </div>
-</div>
+    </div>
 
-<style>
-    .total:hover{
-        background-color: black;
-        color: white;
-    }
-    .remove_item_icon:hover {
-        animation: shake 0.5s;
-        animation-iteration-count: infinite;
-    }
+    <style>
+        .total:hover{
+            background-color: black;
+            color: white;
+        }
+        .remove_item_icon:hover {
+            animation: shake 0.5s;
+            animation-iteration-count: infinite;
+        }
 
-    @keyframes shake {
-        0% { transform: translate(1px, 1px) rotate(0deg); }
-        10% { transform: translate(-1px, -2px) rotate(-1deg); }
-        20% { transform: translate(-3px, 0px) rotate(1deg); }
-        30% { transform: translate(3px, 2px) rotate(0deg); }
-        40% { transform: translate(1px, -1px) rotate(1deg); }
-        50% { transform: translate(-1px, 2px) rotate(-1deg); }
-        60% { transform: translate(-3px, 1px) rotate(0deg); }
-        70% { transform: translate(3px, 1px) rotate(-1deg); }
-        80% { transform: translate(-1px, -1px) rotate(1deg); }
-        90% { transform: translate(1px, 2px) rotate(0deg); }
-        100% { transform: translate(1px, -2px) rotate(-1deg); }
-    }
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
 
 
-    .btn-secondary{
-        width: 115px;
-    }
-    .btn-primary{
-        width: 115px;
-    }
-    .btn-success{
-        width: 250px;
-        left: 15px;
-        bottom: 15px;
-        margin: 25px;
-    }
-    .modal-content{
-        width: 800px;
-    }
-    .modal-header{
-        color: grey;
-    }
-    .last_td{
-        text-align: center;
-        width: 50px;
-    }
-    .remove_item_icon{
-        width: 38%;
-    }
-</style>
+        .btn-secondary{
+            width: 115px;
+        }
+        .btn-primary{
+            width: 115px;
+        }
+        .btn-success{
+            width: 250px;
+            left: 15px;
+            bottom: 15px;
+            margin: 25px;
+        }
+        .modal-content{
+            width: 800px;
+        }
+        .modal-header{
+            color: grey;
+        }
+        .last_td{
+            text-align: center;
+            width: 50px;
+        }
+        .remove_item_icon{
+            width: 38%;
+        }
+    </style>
 </body>
 </html>

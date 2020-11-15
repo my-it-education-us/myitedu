@@ -340,6 +340,10 @@ function display_select_options($maxlimit=0)
 
             });
         })
+        $("#checkout_button").click(function (){
+            $("#checkout").fadeIn("slow");
+            $("#staticBackdrop").animate({ scrollTop: $("#staticBackdrop")[0].scrollHeight}, 750);
+        });
 
     });
 
@@ -351,5 +355,7 @@ include "modal.php";
 /
 </body>
 </html>
+
+
 
 

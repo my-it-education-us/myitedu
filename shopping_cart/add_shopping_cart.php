@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../database.php";
 $db = new \Database\database("myitedu");
 $qty = $_POST['qty']??null;
@@ -9,9 +10,11 @@ if (empty($qty) || empty($product_id)){
     exit("Either qty product_id field is empty");
 }
 
-$sql = "INSERT INTO shopping_cart (product_id, qty, user_id) VALUES ($product_id, $qty, $user_id)";
+if (empty($_SESSION['products']['qty'])){
+    $_SESSION['products']['qty'] = 1;
+}
+$session_qty = $_SESSION['products']['qty'];
 
-$add = $db->sql($sql);
 
 $db = new \Database\database("myitedu");
 $sql = "SELECT * FROM shopping_cart WHERE product_id = $product_id;";
@@ -21,11 +24,14 @@ if (!empty($product)){
     $db = new \Database\database("myitedu");
     $sql = "UPDATE shopping_cart SET qty = $qty, user_id = $user_id WHERE product_id = $product_id;";
     $product = $db->sql($sql);
-    exit(1);
+    echo $session_qty;
+    exit;
 }else{
-       $db = new \Database\database("myitedu");
-       $sql = "INSERT INTO shopping_cart (product_id, qty, user_id) VALUES($product_id, $qty, $user_id);";
-       $product = $db->sql($sql);
-       exit(1);
+    $db = new \Database\database("myitedu");
+    $sql = "INSERT INTO shopping_cart (product_id, qty, user_id) VALUES($product_id, $qty, $user_id);";
+    $product = $db->sql($sql);
+    echo $session_qty;
+    exit;
 }
-exit(0);
+echo $session_qty;
+exit;

@@ -70,3 +70,6 @@ if (!count($products)){
     </tr>
 
 </table>
+<?php
+include "checkout.php";
+?>

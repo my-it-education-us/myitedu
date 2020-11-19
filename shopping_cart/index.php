@@ -9,90 +9,26 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 
 </head>
 <body>
 <?php
 
-include "../database.php";
-$db = new \Database\database("myitedu");
-$products = $db->sql("SELECT * FROM products;");
-
-$qty=0;
-
-$parms = $_GET;
-$id = $parms['id']??0;
-$qty = $parms['qty']??0;
-$action = $parms['action']??null;
-
-
-if ($action == 'empty'){
-    $db = new \Database\database("myitedu");
-    $sql = "DELETE FROM shopping_cart;";
-    $product = $db->sql($sql);
-    unset( $_SESSION['products']['qty']);
-    session_destroy();
-}
-
-if ($qty == 'delete'){
-    $db = new \Database\database("myitedu");
-    $sql = "DELETE FROM shopping_cart WHERE product_id = $id;";
-    $product = $db->sql($sql);
-}
-
-if ($qty>0) {
-    $_SESSION['products']['qty'] += $qty;
-    $db = new \Database\database("myitedu");
-    $sql = "SELECT * FROM shopping_cart WHERE product_id = $id;";
-    $product = $db->sql($sql);
-
-    if (!empty($product)){
-        $db = new \Database\database("myitedu");
-        $sql = "UPDATE shopping_cart SET qty = $qty, user_id = 99 WHERE product_id = $id;";
-        $product2 = $db->sql($sql);
-    }else{
-        //   $db = new \Database\database("myitedu");
-        //   $sql = "INSERT INTO shopping_cart (product_id, qty, user_id) VALUES($id, $qty, 99);";
-        //   $product3 = $db->sql($sql);
-    }
-
-
-}
-
-
-
-
-function display_select_options($maxlimit=0)
-{
-    if ($maxlimit>0) {
-        for ($i = 1; $i <= $maxlimit; $i++) {
-            echo "<option name='product$i' value=\"$i\">$i</option>";
-        }
-    }else{
-        echo "<option name='product1' value=\"0\">0</option>";
-    }
-    echo "<option name='product$i' value=\"delete\">Delete</option>";
-}
-
-?>
+include "includes/index_include.php"; ?>
 <div class="container-fluid">
-
     <div class="large_image_window">
 
     </div>
-
     <div data-toggle="modal" data-target="#staticBackdrop" class="shopping_cart">
         <?php
         $session_qty = $_SESSION['products']['qty']??0;
         echo $session_qty;
         ?>
     </div>
-
     <h4>Our Products</h4>
-
     <hr>
-
     <table class="table table-bordered">
         <tr>
             <th>Image</th>
@@ -101,7 +37,6 @@ function display_select_options($maxlimit=0)
             <th>Price</th>
             <th>QTY</th>
         </tr>
-
         <?php
         foreach ($products as $product) {
             ?>
@@ -152,207 +87,12 @@ function display_select_options($maxlimit=0)
             <?php
         }
         ?>
-
     </table>
-
-
 </div>
 
-<style>
-    .large_image_window{
-        width: 300px;
-        height: 300px;
-        position: absolute;
-        left: 15%;
-        top: 30%;
-        display: none;
-
-    }
-    .large_image_window:hover{
-        background-color: white;
-        width: 380px;
-        height: 380px;
-        position: absolute;
-        left: 15%;
-        top: 30%;
-        display: none;
-    }
-
-    .discount{
-        color: darkred;
-    }
-    .newpr{
-        color: #730505;
-    }
-    .oldpr{
-        text-decoration: line-through;
-        color: silver;
-    }
-    .dis_icon{
-        width: 30px;
-        position: relative;
-        right: 2px;
-        top: 2px;
-    }
-    .product {
-        background-image: url("https://cdn2.iconfinder.com/data/icons/e-commerce-4/256/Add_to_Shopping_Basket-512.png");
-        background-size: 90% 90%;
-        background-position: center;
-        background-color: #4cd137;
-        width: 35px;
-        height: 35px;
-        position: relative;
-        top: 9px;
-        box-shadow: 0 4px;
-        color: grey;
-        border-radius: 50%;
-
-    }
-    .product:active{
-        box-shadow: 0 1px;
-        transform: translateY(3px);
-        color: red;
-    }
-    .product:hover{
-        background-color: #00ee00;
-    }
-
-    .shopping_cart {
-        width: 40px;
-        height: 40px;
-        position: absolute;
-        right: 20px;
-        top: 20px;
-        z-index: 100;
-        background-image: url("https://i.pinimg.com/originals/5d/26/a1/5d26a173f443cbd190e34481438d474b.png");
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        line-height: 38px;
-        color: red;
-        font-weight: bolder;
-        border: none !important;
-        box-shadow: 0 4px;
-        border-radius: 50%;
-    }
-    .shopping_cart:active{
-        box-shadow: 0 1px;
-        transform: translateY(3px);
-        color: red;
-    }
-    .shopping_cart:hover{
-        background-color: blue;
-    }
-
-    .sh_add_btn {
-        width: 30px;
-    }
-
-    tr:hover {
-        background-color: #b3e096 !important;
-        cursor: pointer;
-    }
-
-    th {
-        background-color: #033b6e;
-        color: whitesmoke;
-    }
-
-    tr:nth-child(even) {
-        background-color: lavenderblush;
-    }
-    tr:nth-child(odd) {
-        background-color: lightgray;
-    }
-
-
-    .product_icon {
-        width: 70px;
-    }
-
-    h4 {
-        color: lightgreen;
-    }
-
-    table {
-        background-color: whitesmoke;
-    }
-
-    .container-fluid {
-        text-align: center;
-        background-color: silver;
-    }
-    body{
-        background-color: #730505;
-    }
-    .display_img{
-        width: 100%;
-    }
-</style>
-
-<script>
-    $(function (){
-        $(".large_image_window").empty().hide();
-
-        $(".product_icon").mouseover(function (){
-            let img_url = $(this).data("img_url");
-            let img = "<img class='display_img' src='"+img_url+"'>";
-            $(".large_image_window").fadeIn('slow').html(img);
-
-        });
-        $(".product_icon").mouseleave(function (){
-            $(".large_image_window").empty().hide();
-
-        });
-
-
-        $(".shopping_cart").click(function (){
-            let data = {};
-            $.post("http://myitedu.uz/shopping_cart/shopping_cart.php", data, function (response){
-                $("#modal-body").html(response);
-            });
-
-        });
-        $(document).on("click", ".remove_item_icon", function (){
-            let product_id = $(this).data("product_id");
-            let data = {'product_id' :product_id};
-            let result = null;
-            $.post("http://myitedu.uz/shopping_cart/delete_items.php", data, function (response){
-
-                if (response==1) {
-                    $.post("http://myitedu.uz/shopping_cart/shopping_cart.php", data, function (response) {
-                        $("#modal-body").html(response);
-                        $(".shopping_cart").text(qty);
-                    });
-                }
-            });
-
-        });
-        $(".product").click(function (){
-            let product_id = $(this).data('product_id');
-            let qty = $("#qty_"+product_id).val();
-            let data = {
-                'product_id': product_id,
-                'qty': qty,
-                'user_id': 99
-            };
-            $.post("http://myitedu.uz/shopping_cart/add_shopping_cart.php", data, function (response){
-                $(".shopping_cart").text(qty);
-
-            });
-        })
-        $("#checkout_button").click(function (){
-            $("#checkout").fadeIn("slow");
-            $("#staticBackdrop").animate({ scrollTop: $("#staticBackdrop")[0].scrollHeight}, 750);
-        });
-
-    });
-
-</script>
-
 <?php
-include "modal.php";
-?>
-/
+include "modal.php"; ?>
+<script src="js/script.js"></script>
 </body>
 </html>
 

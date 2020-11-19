@@ -12,6 +12,8 @@ if (empty($qty) || empty($product_id)){
 
 if (empty($_SESSION['products']['qty'])){
     $_SESSION['products']['qty'] = 1;
+}else{
+    $_SESSION['products']['qty']++;
 }
 $session_qty = $_SESSION['products']['qty'];
 

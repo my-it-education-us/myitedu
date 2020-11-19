@@ -17,11 +17,11 @@
             <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Your order</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&cross;</span>
                 </button>
             </div>
             <div id="modal-body" class="modal-body">
-                edfdsfdfdsfdvgdvsdf
+                error
             </div>
             <?php include_once "checkout.php";?>
             <div class="modal-footer">

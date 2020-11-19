@@ -1,0 +1,129 @@
+
+.large_image_window{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 15%;
+    top: 30%;
+    display: none;
+
+}
+.large_image_window:hover{
+    background-color: white;
+    width: 380px;
+    height: 380px;
+    position: absolute;
+    left: 15%;
+    top: 30%;
+    display: none;
+}
+
+.discount{
+    color: darkred;
+}
+.newpr{
+    color: #730505;
+}
+.oldpr{
+    text-decoration: line-through;
+    color: silver;
+}
+.dis_icon{
+    width: 30px;
+    position: relative;
+    right: 2px;
+    top: 2px;
+}
+.product {
+    background-image: url("https://cdn2.iconfinder.com/data/icons/e-commerce-4/256/Add_to_Shopping_Basket-512.png");
+    background-size: 90% 90%;
+    background-position: center;
+    background-color: #4cd137;
+    width: 35px;
+    height: 35px;
+    position: relative;
+    top: 9px;
+    box-shadow: 0 4px;
+    color: grey;
+    border-radius: 50%;
+
+}
+.product:active{
+    box-shadow: 0 1px;
+    transform: translateY(3px);
+    color: red;
+}
+.product:hover{
+    background-color: #00ee00;
+}
+
+.shopping_cart {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 100;
+    background-image: url("https://i.pinimg.com/originals/5d/26/a1/5d26a173f443cbd190e34481438d474b.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    line-height: 38px;
+    color: red;
+    font-weight: bolder;
+    border: none !important;
+    box-shadow: 0 4px;
+    border-radius: 50%;
+}
+.shopping_cart:active{
+    box-shadow: 0 1px;
+    transform: translateY(3px);
+    color: red;
+}
+.shopping_cart:hover{
+    background-color: blue;
+}
+
+.sh_add_btn {
+    width: 30px;
+}
+
+tr:hover {
+    background-color: #b3e096 !important;
+    cursor: pointer;
+}
+
+th {
+    background-color: #033b6e;
+    color: whitesmoke;
+}
+
+tr:nth-child(even) {
+    background-color: lavenderblush;
+}
+tr:nth-child(odd) {
+    background-color: lightgray;
+}
+
+
+.product_icon {
+    width: 70px;
+}
+
+h4 {
+    color: lightgreen;
+}
+
+table {
+    background-color: whitesmoke;
+}
+
+.container-fluid {
+    text-align: center;
+    background-color: silver;
+}
+body{
+    background-color: #730505;
+}
+.display_img{
+    width: 100%;
+}

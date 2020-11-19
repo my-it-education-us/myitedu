@@ -11,7 +11,7 @@
     </label>
     <label>
         <input value="cc" class="credit_types ct_cc" type="radio" name="credit_type" value="small">
-        <img src="https://i0.wp.com/mobilepaymentmagazine.com/wp-content/uploads/apple-pay-logo.png?resize=300%2C144">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuqNHHVlXzfK9w-ZFVk79z6t-hV_776DvX9w&usqp=CAU">
     </label>
 
     <table class="table table-bordered checkout_table">
@@ -24,7 +24,7 @@
         <tr>
             <td colspan="2">
                 <p>Card number</p>
-                <p><input name="card_number" type="number" placeholder="1234 5678 9012 3456"></p>
+                <p><input name="card_number" type="number" placeholder="xxxx xxxx xxxx xxxx"></p>
             </td>
         </tr>
         <tr>
@@ -32,18 +32,18 @@
             <td>Security Code</td>
         </tr>
         <tr>
-            <td><input name="expiry_date" placeholder="12/21" type="text"></td>
+            <td><input name="expiry_date" placeholder="12/21" type="tel" autocomplete="off"></td>
             <td><input type="number" name="security_code" placeholder="123"></td>
         </tr>
         <tr>
             <td colspan="2" class="checkout_button">
-                <button class="btn btn-success">Checkout</button>
+                <button class="btn btn-success">Pay $<?php echo $grandtotal;?></button>
             </td>
         </tr>
     </table>
 </div>
-<style>
 
+<style>
     #checkout label img{
         width: 60px;
         height: 45px;
@@ -51,7 +51,9 @@
     }
 
     .checkout_button button{
-        width: 99%;
+        width: 90%;
+        height: auto;
+        text-align: center;
     }
     .checkout_button{
         text-align: center;

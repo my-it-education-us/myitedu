@@ -37,7 +37,7 @@
         </tr>
         <tr>
             <td colspan="2" class="checkout_button">
-                <button class="btn btn-success">Pay $<?php echo $grandtotal;?></button>
+                <button class="btn btn-success">Pay</button>
             </td>
         </tr>
     </table>

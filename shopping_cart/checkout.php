@@ -3,17 +3,20 @@
     <p>Choose your preferred payment method</p>
     <label>
         <input value="cc" class="credit_types ct_cc" type="radio" name="credit_type" value="small">
-        <img src="https://pngimg.com/uploads/credit_card/credit_card_PNG19.png">
+        <img src="https://i.pinimg.com/originals/66/fa/91/66fa9105ce5aa3856c965088c1cfec2e.gif">
     </label>
     <label>
-        <input value="cc" class="credit_types ct_cc" type="radio" name="credit_type" value="small">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRxJVLtfGJ-EXUPR7U2X25F9LwjEWL0RLGI2Q&usqp=CAU">
+        <input value="cc" class="credit_types ct_cc" type="radio" name="PayPal" value="small">
+        <img src="https://media1.tenor.com/images/22e81e0fa4cac4a3314cbbb2fb27d223/tenor.gif?itemid=16332863">
     </label>
     <label>
-        <input value="cc" class="credit_types ct_cc" type="radio" name="credit_type" value="small">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuqNHHVlXzfK9w-ZFVk79z6t-hV_776DvX9w&usqp=CAU">
+        <input value="cc" class="credit_types ct_cc" type="radio" name="master_cart" value="small">
+        <img src="https://i.pinimg.com/originals/f7/54/ef/f754ef05e2e46234a2f8f60b5ee80041.gif">
     </label>
-
+    <label>
+        <input value="cc" class="credit_types ct_cc" type="radio" name="visa" value="small">
+        <img src="https://i.pinimg.com/originals/8b/59/0a/8b590a2b5a20ac9f160d8be8c62b13ff.gif">
+    </label>
     <table class="table table-bordered checkout_table">
         <tr>
             <td colspan="2">
@@ -24,7 +27,7 @@
         <tr>
             <td colspan="2">
                 <p>Card number</p>
-                <p><input name="card_number" type="number" placeholder="xxxx xxxx xxxx xxxx"></p>
+                <p><input  name="card_number" type="number" placeholder="xxxx xxxx xxxx xxxx"></p>
             </td>
         </tr>
         <tr>
@@ -47,7 +50,7 @@
     #checkout label img{
         width: 60px;
         height: 45px;
-        border: 1px solid #8c8c8c;
+        border: 1px solid lightsalmon;
     }
 
     .checkout_button button{
@@ -96,6 +99,6 @@
 
     /* CHECKED STYLES */
     [type=radio]:checked + img {
-        outline: 2px solid #f00;
+        outline: 2px solid red;
     }
 </style>

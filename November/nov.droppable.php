@@ -11,7 +11,6 @@
     <script>
         $( function() {
             <!-- emoji harakatga kelishi -->
-                $("#Alfa").draggable();
                 $("#Tesla").draggable();
                 $("#chevrolet").draggable();
                 $("#mercedes_benz").draggable();
@@ -20,17 +19,22 @@
                 $("#subaru").draggable();
                 $("#toyota").draggable();
             <!-- rasimlarni harakatga kiltirish  -->
-            $('#Alfa').animate({right:'15px'},1200);
-            $('#chevrolet').animate({right:'115px'},1200);
-            $('#Tesla').animate({right:'215px'},1200);
-            $('#ferrari').animate({right:'315px'},1200);
-            $('#mercedes_benz').animate({right:'415px'},1200);
-            $('#toyota').animate({right:'515px'},1200);
-            $('#mustang').animate({right:'615px'},1200);
-            $('#subaru').animate({right:'715px'},1200);
+            $('#chevrolet').animate({right:'25px'},1200);
+            $('#Tesla').animate({right:'135px'},1200);
+            $('#ferrari').animate({right:'235px'},1200);
+            $('#mercedes_benz').animate({right:'335px'},1200);
+            $('#toyota').animate({right:'445px'},1200);
+            $('#mustang').animate({right:'555px'},1200);
+            $('#subaru').animate({right:'665px'},1200);
             <!-- background_images harakkatga kiltirish-->
             $('#right_background').animate({left:'563px'},1800);
             $('#left_background').animate({width:'563px'},1800);
+
+            for (a = 1; a <= 8; a++){
+            $("#droppable" + a).mouseup(function (){
+                alert("This box empty");
+            });
+            }
                 for (i = 1; i <= 8; i++) {
                     <!-- droppable  -->
                         $("#droppable" + i).droppable({
@@ -38,22 +42,20 @@
                                 $(this)
                                     .addClass('ui-state-disabled')
                                     .find("p")
-                                    .html("Right")
+                                    .html()
                                     .class();
                             }
                         });
                 }
         } );
+
     </script>
 </head>
 <body>
 <!-- images images and id -->
-<div>
+<div id="">
 <div>
     <img class="sher" id="Tesla" src="https://cdn.iconscout.com/icon/free/png-256/tesla-11-569489.png"/>
-</div>
-<div>
-    <img class="sher" id="Alfa" src="https://seeklogo.com/images/A/Alfa_Romeo-logo-176ACD26B1-seeklogo.com.png"/>
 </div>
 <div>
     <img class="sher" id="chevrolet" src="https://cdn.iconscout.com/icon/free/png-512/chevrolet-16-569591.png"/>
@@ -77,14 +79,14 @@
 </div>
 
 <!--background and id-->
+<pre>
 <img id="right_background" src="https://i.dlpng.com/static/png/4862732_preview.png"/>
 <img id="left_background" src="https://i.pinimg.com/originals/a0/b1/84/a0b1848238a335ae32f1ae32d4f40a07.jpg"/>
-
+</pre>
+<!-- droppable -->
+<div id="">
 <div id="droppable1" class="text">
     <p>Tesla</p>
-</div>
-<div id="droppable2" class="text">
-    <p>Alfa Romeo</p>
 </div>
 <div id="droppable3" class="text">
     <p>Chevrolet</p>
@@ -104,7 +106,7 @@
 <div id="droppable8" class="text">
     <p>Mustang</p>
 </div>
-
+</div>
 
 
 <style>

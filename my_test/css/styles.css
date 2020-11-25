@@ -1,0 +1,85 @@
+
+body{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+#progress{
+    color: black;
+    font-size: 10px;
+}
+.container{
+    width: 800px;
+    max-width: 80%;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 0 35px 20px #777;
+    color: black;
+}
+.btn-grid{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 30px;
+    margin: 20px 0;
+}
+.question{
+    margin: 40px;
+    box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+    font-style: italic;
+
+
+}
+.next-btn{
+    width: 100px;
+    height: 55px;
+    margin: 20px;
+}
+.btn{
+    border: 1px solid silver;
+    box-shadow: 0 15px 10px #777;
+    background-color: bisque;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: black;
+    outline: none;
+}
+.btn:hover{
+    background-color: #ecd7c3;
+}
+.btn.correct{
+    background: #4cd137;
+    color: white;
+}
+.btn.wrong{
+    background: #FF0000;
+}
+.next-btn{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    box-shadow:
+            0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+            0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+            0 12.5px 10px rgba(0, 0, 0, 0.06),
+            0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+            0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+            0 100px 80px rgba(0, 0, 0, 0.12)
+;
+
+}
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hide{
+    display: none;
+}

@@ -1,5 +1,7 @@
 
     const startButton = document.getElementById('html')
+    const scc = document.getElementById('droppable2')
+    const php = document.getElementById('droppable3')
     const nextButton = document.getElementById('next-btn')
     const questionContainerElement = document.getElementById
     ('question-container')
@@ -14,8 +16,10 @@
     startNextQuestion()
 })
 
-
     function startGame(){
+        scc.classList.add('hide')
+        php.classList.add('hide')
+
     startButton.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestions = 0

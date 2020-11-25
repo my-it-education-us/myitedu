@@ -28,11 +28,10 @@
         <button id="next-btn" class="next-btn btn hide">Next</button>
     </div>
     <footer>
+        <hr>
         <p id="progress">Question x of y</p>
     </footer>
 </div>
-
-
 
 <script src="js/jqscript.js"></script>
 </body>

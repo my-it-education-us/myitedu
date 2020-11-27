@@ -1,4 +1,16 @@
-<?php session_start();?>
+
+<?php
+session_start();
+$is_session_active = $_SESSION['is_user_logged_in']??null;
+if (!$is_session_active){
+    function redirect($msg = null, $url, $error = 1)
+    {
+        header("Location: $url?error=$error&msg=$msg");
+        exit($msg);
+    }
+    redirect("You are not authorized to display this page", 'login.php', 1);
+}
+?>
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>

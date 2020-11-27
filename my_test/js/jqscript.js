@@ -2,6 +2,7 @@
     const startButton = document.getElementById('html')
     const scc = document.getElementById('droppable2')
     const php = document.getElementById('droppable3')
+
     const nextButton = document.getElementById('next-btn')
     const questionContainerElement = document.getElementById
     ('question-container')

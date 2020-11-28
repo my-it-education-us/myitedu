@@ -13,8 +13,8 @@
 <div class="mywrapper">
 <form action="sign_in.php" method="post">
 <div class="btn-grid">
-    <input name="lname" type="text" class="form-control" placeholder="last name">
-    <input name="fname" type="text" class="form-control" placeholder="first name">
+    <input name="lname" type="text" class="form-control_last" placeholder="last name">
+    <input name="fname" type="text" class="form-control_last" placeholder="first name">
         </div>
         <div class="form-group">
 <label for="exampleInputEmail1">Email address</label>
@@ -46,6 +46,9 @@
         height: 100vh;
         justify-content: center;
         align-items: center;
+    }
+    .form-control_last{
+        text-transform: capitalize;
     }
     .mywrapper{
         width: 700px;

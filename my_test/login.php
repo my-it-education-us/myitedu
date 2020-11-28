@@ -25,6 +25,7 @@
 <div class="container-fluid mywrapper">
 <form action="backend.php" method="post">
     <?php
+
     if (isset($_GET['error']) && $_GET['error']==1)
     {
         ?>

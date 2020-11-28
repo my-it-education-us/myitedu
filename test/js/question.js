@@ -4,12 +4,12 @@
 const quiz = [
     {
         q: 'Which month comes right?',
-        options: ['may','sep','july','august'],
-        answer:0
+        options: ['may','december','july','august'],
+        answer:1
     },
     {
         q: 'What color is a banana?',
-        options: ['may','sep','july','yellow'],
+        options: ['pink','green','red','yellow'],
         answer:3
     },
     {
@@ -30,7 +30,8 @@ const quiz = [
     {
         q: '10 * 9?',
         options: ['81','91','80','90'],
-        answer:0
+        answer:3
     }
+
 ]
 

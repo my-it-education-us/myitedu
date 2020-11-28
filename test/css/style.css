@@ -15,6 +15,7 @@ body{
     outline: none;
 }
 .custom-box{
+    animation: fadeInRight 1s ease;
     max-width: 700px;
     background-color: #fff;
     margin: 40px auto;
@@ -23,6 +24,18 @@ body{
     box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
 
 }
+@keyframes fadeInRight {
+    0%{
+        transform: translateX(40px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+}
+
 .custom-box::before,
 .custom-box::after{
     content: '';
@@ -181,6 +194,22 @@ body{
     margin-right: 3px;
     margin-top: 15px;
 }
+
+.quiz-box .answers-indicator div.correct{
+    background-color: green;
+    background-image: url("https://www.jing.fm/clipimg/full/144-1443488_correct-white-image-png.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.quiz-box .answers-indicator div.wrong{
+    background-color: red;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("https://www.rtwsa.com/__data/assets/image/0017/10727/x.png");
+}
+
 .result-box{
     text-align: center;
 }
@@ -208,4 +237,10 @@ body{
 }
 .result-box .btn{
     margin-right: 20px;
+}
+
+@media (max-width: 767px) {
+    .result-box .btn{
+        margin-bottom: 15px;
+    }
 }

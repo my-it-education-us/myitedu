@@ -1,18 +1,21 @@
 <?php
 session_start();
 include "login.php";
-$pass = password_hash('sherbek', PASSWORD_BCRYPT);
+
 $lname = $_POST['lname']??null;
 $fname = $_POST['fname']??null;
 $email = $_POST['email']??null;
 $password = $_POST['password']??null;
+$password2 = password_hash($password, PASSWORD_BCRYPT);
+$password_matched  = password_verify($password2,$password);
 
 
 include "../database.php";
 $db = new \Database\database("myitedu");
-$sql = "INSERT INTO users (last_name, first_name, email, password) VALUES('$lname','$fname','$email','$pass');";
+$sql = "INSERT INTO users (last_name, first_name, email, password) VALUES('$lname','$fname','$email','$password_matched' limit 1;);";
 $user = $db->sql($sql);
-;
+exit;
+
 exit;
 ?>
 <!doctype html>

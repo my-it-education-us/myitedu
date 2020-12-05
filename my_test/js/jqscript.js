@@ -124,7 +124,7 @@
         ]
     },
     {
-        questions: 'How do you insert a comment in a CSS file?',
+        questions: 'How do you insert a comment in a CSS fff?',
         answer: [
     { text: '\' this is a comment', correct: false},
     { text: '/* this is a comment */ ', correct: true},

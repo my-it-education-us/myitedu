@@ -18,7 +18,7 @@ function getCars($file_name)
 
     try {
         if (!file_exists($file_name)) {
-            throw new Exception("Siz ezlayotgan <del>\"$file_name\"</del> file mavjud emas:_: eltimoz tiksherib qayta urinib kuring!");
+            throw new Exception("Siz ezlayotgan <del>\"$file_name\"</del> fff mavjud emas:_: eltimoz tiksherib qayta urinib kuring!");
         }
         $cars = file_get_contents("$file_name");
         echo $cars;

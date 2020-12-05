@@ -69,5 +69,30 @@
 <script src="js/apps.js"></script>
 
 
+<style>
+    .quiz-box {
+    background-color: white;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("https://site-542516.mozfiles.com/files/542516/22.gif");
+}
+  .home_box{
+      background-color: white;
+      background-size: 22%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url("https://i.gifer.com/origin/f7/f748a43312487000f282968b97aa60fe_w200.gif");
+  }
+  .result-box{
+
+      background-size: 42%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url("https://i2.wp.com/generousmatters.com/wp-content/uploads/2016/08/group_therapy_500_clr_17543.gif");
+  }
+
+</style>
+
 </body>
 </html>

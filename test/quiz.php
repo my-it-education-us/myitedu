@@ -10,11 +10,14 @@
     <title>Document</title>
 </head>
 <body>
+
+
+<!-- Bosh sahifa start quiz -->
 <div class="home_box custom-box">
     <h3>Instruction:</h3>
     <p>Total number of question: <span class="total-question"></span></p>
     <button type="button" class="btn" onclick="start()" >Start Quiz</button>
-
+    <!-- test uchun savolar jadvali va next  -->
 </div>
 <div class="quiz-box custom-box hide">
     <div class="question-number">
@@ -34,6 +37,8 @@
     </div>
 </div>
 
+
+<!-- testning finish qismida javoblarni chiqaoradigan jadval -->
 <div class="result-box custom-box hide">
     <h1>Quiz Result</h1>
     <table>
@@ -65,10 +70,12 @@
     <button type="button" class="btn" onclick="tryAgainQuiz()">Try Again</button>
     <button type="button" class="btn" onclick="goToHome()">Go to home</button>
 </div>
+
+<!--- js ulanish  -->
 <script src="js/question.js"></script>
 <script src="js/apps.js"></script>
 
-
+<!--- background images png  -->
 <style>
     .quiz-box {
     background-color: white;

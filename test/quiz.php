@@ -75,7 +75,7 @@
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("https://site-542516.mozfiles.com/files/542516/22.gif");
+    background-image: url("https://static.wixstatic.com/media/8a1186_34bad4db7eaf46198b2af42b9457ccd5~mv2.gif/v1/fit/w_320,h_320,al_c,q_80/file.gif");
 }
   .home_box{
       background-color: white;
